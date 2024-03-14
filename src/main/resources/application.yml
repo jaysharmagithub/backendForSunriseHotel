@@ -1,0 +1,50 @@
+# Server configuration
+#server:
+#  port: 8080                      # Port on which the server listens for HTTP requests
+    #servlet:
+    #context-path: /myapp          # Context path for the application (optional)
+    #session:
+    #cookie:
+    # http-only: true           # Configure HTTP-only cookies (optional)
+  #secure: true              # Use secure cookies (optional)
+
+# Database configuration (example for MySQL)
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/sunrise_hotel_db   # Database URL
+#    username: root                           # Database username
+#    password: Mysql@jay                      # Database password
+#    driver-class-name: com.mysql.cj.jdbc.Driver    # Database driver class name
+#  jpa:
+#    #database-platform: org.hibernate.dialect.MySQL5Dialect  # Hibernate dialect for MySQL
+#    properties:
+#      hibernate:
+#        format_sql: true
+#        dialect: org.hibernate.dialect.MySQLDialect
+#        connection:
+#          datasource:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update # Hibernate DDL mode (create, update, validate, none)
+#  servlet:
+#    multipart:
+#      max-file-size: 5MB
+#      max-request-size: 5MB
+#      file-size-threshold: 2KB
+
+
+#logging:
+#  level:
+#    org:
+#      hibernate:
+#        SQL: DEBUG
+#        type:
+#          descriptor:
+#            sql:
+#              BasicBinder:    TRACE
+
+  #app properties
+#auth:
+#  token:
+#    jwtSecret:0vSVpGc7RN8anX7zZmR8b46ZUxPt9bV32wnARRsa79A=
+#    expirationInMils:3600000
