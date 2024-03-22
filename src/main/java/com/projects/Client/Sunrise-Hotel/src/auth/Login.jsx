@@ -41,11 +41,10 @@ const Login = () => {
   };
 
   return (
-    <section className="container col-6 mt-5 mb-5">
+    <section className="container  mt-5 mb-5 d-flex justify-content-center    ">
       {errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
-      <h2>Login </h2>
-      <form onSubmit={handleSubmit}>
-        <div className="row mb-3">
+      <form className="mt-5" onSubmit={handleSubmit}>
+        <div className="row mb-3 mt-3">
           <label htmlFor="email" className="col-sm-2 col-form-label">
             Email
           </label>
@@ -54,13 +53,13 @@ const Login = () => {
               id="email"
               type="email"
               name="email"
-              className="form-control"
+              className="form-control "
               value={login.email}
               onChange={handleInputChange}
             />
           </div>
         </div>
-        <div className="row mb-3">
+        <div className="row mb-3 mt-3">
           <label htmlFor="password" className="col-sm-2 col-form-label">
             Password
           </label>
@@ -75,16 +74,18 @@ const Login = () => {
             />
           </div>
         </div>
-        <div className="mb-3">
+        <div className="mb-1 d-flex  flex-direction-column">
           <button
             type="submit"
             className="btn btn-hotel"
-            style={{ marginRight: "10px" }}>
+            style={{ marginRight: "30px" }}>
             Login
           </button>
-          <span style={{ marginLeft: "10px" }}>
-            Don't have an account yet?<Link to={"register"}>Register</Link>
-          </span>
+          <div className="ml-50">
+            <span>
+              Don't have an account yet?<Link to={"register"}>Register</Link>
+            </span>
+          </div>
         </div>
       </form>
     </section>

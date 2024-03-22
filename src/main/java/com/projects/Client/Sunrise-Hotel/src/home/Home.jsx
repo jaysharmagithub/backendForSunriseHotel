@@ -25,7 +25,7 @@ const Home = () => {
       )}
       <MainHeader />
       <div className="container">
-        {/* <RoomSearch /> */}
+        <RoomSearch />
         <RoomCarousel />
         <Parallax />
         <RoomCarousel />

@@ -39,20 +39,19 @@ const Registration = () => {
     }, 5000);
   };
   return (
-    <section className="container col-6 mt-5 mb-5">
-      {errorMessage && <p className="alert-danger">{errorMessage}</p>}
+    <section className="container col-4 mt-5 mb-5">
+      {errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
       {successMessage && (
         <p className="alert alert-success">{successMessage}</p>
       )}
 
-      <h2>Register</h2>
+      <h2 className="text-center mt-5 mb-5">Register</h2>
       <form onSubmit={handleRegistration}>
-        <div className="mb-3 row">
-          <label htmlFor="firstName" className="col-sm-2 col-form-label">
-            first Name
+        <div className="mb-3 col d-flex flex-direction-row">
+          <label htmlFor="firstName" className="col-sm-3 col-form-label">
+            First Name
           </label>
-          <div className="col-sm-10">
-            {" "}
+          <div className="col-sm-8">
             <input
               id="firstName"
               name="firstName"
@@ -63,13 +62,14 @@ const Registration = () => {
             />
           </div>
         </div>
-        <div className="mb-3 row">
-          <label htmlFor="lastName" className="col-sm-2 col-form-label">
-            LastName
+
+        <div className="mb-3 col d-flex flex-direction-row">
+          <label htmlFor="lastName" className="col-sm-3 col-form-label">
+            Last Name
           </label>
-          <div className="col-sm-10">
+          <div className="col-sm-8">
             <input
-              id="lastName "
+              id="lastName"
               name="lastName"
               type="text"
               className="form-control"
@@ -78,11 +78,12 @@ const Registration = () => {
             />
           </div>
         </div>
-        <div className="mb-3 row">
-          <lable htmlFor="email" className="col-sm-2 col-form-label">
-            Email{" "}
-          </lable>
-          <div className="col-sm-10">
+
+        <div className="mb-3 col d-flex flex-direction-row">
+          <label htmlFor="email" className="col-sm-3 col-form-label">
+            Email
+          </label>
+          <div className="col-sm-8">
             <input
               id="email"
               name="email"
@@ -93,27 +94,27 @@ const Registration = () => {
             />
           </div>
         </div>
-        <div className="mb-3 row">
-          <label htmlFor="password" className="col-sm-2 col-form-labels">
+
+        <div className="col d-flex flex-direction-row">
+          <label htmlFor="password" className="col-sm-3 col-form-label">
             Password
           </label>
-          <div className="col-sm-10">
+          <div className="col-sm-8">
             <input
               type="password"
               className="form-control"
               id="password"
               name="password"
               value={registration.password}
-              onChange={handleInputChange}></input>
+              onChange={handleInputChange}
+            />
           </div>
         </div>
-        <div className="mb-3">
+        <div className="mb-3 mt-4 d-flex justify-content-center">
           <button
             type="submit"
             className="btn btn-hotel"
-            style={{
-              marginRight: "10px",
-            }}>
+            style={{ marginRight: "10px" }}>
             Register
           </button>
           <span style={{ marginLeft: "10px" }}>

@@ -21,7 +21,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/bookings")
-public class BookingController {
+public class
+BookingController {
     private final IBookingService bookingService;
     private final IRoomService roomService;
 
@@ -51,6 +52,7 @@ public class BookingController {
         }
     }
     @GetMapping("/confirmation/{confirmationCode}")
+    @PreAuthorize("hasRole('ROLE_ADMIN') or (hasRole('ROLE_USER') and #email == principal.username)")
     public  ResponseEntity<?> getBookingByConfirmationCode(@PathVariable String confirmationCode){
             try{
                 BookedRoom booking = bookingService.findByBookingConfirmationCode(confirmationCode);
@@ -58,6 +60,8 @@ public class BookingController {
                 return ResponseEntity.ok(bookingResponse);
             }catch (ResourceNotFoundException ex){
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+            }catch (Exception e){
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error finding booking: "+e.getMessage());
             }
     }
 

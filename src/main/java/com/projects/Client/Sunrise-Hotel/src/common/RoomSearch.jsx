@@ -7,8 +7,8 @@ import RoomTypeSelector from "./RoomTypeSelector";
 
 const RoomSearch = () => {
   const [searchQuery, setSearchQuery] = useState({
-    checkInDate: "",
-    checkOutDate: "",
+    checkInDate: null,
+    checkOutDate: null,
     roomType: "",
   });
 
@@ -57,8 +57,8 @@ const RoomSearch = () => {
   };
   const handleClearSearch = () => {
     setSearchQuery({
-      checkInDate: "",
-      checkOutDate: "",
+      checkInDate: null,
+      checkOutDate: null,
       roomType: "",
     });
     setAvailableRooms([]);

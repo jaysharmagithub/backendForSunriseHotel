@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.maxContentLength = 5000000;
+axios.defaults.maxContentLength = 50000000000000000000;
 
 export const api = axios.create({
   baseURL: "http://localhost:8080",
@@ -80,9 +80,8 @@ export async function updateRoom(roomId, roomData) {
   const response = await api.put(`/rooms/update/${roomId}`, formData, {
     headers: getHeader(),
   });
-  return response;
+  return response.data;
 }
-
 //gets a room by the Id
 
 export async function getRoomById(roomId) {
@@ -154,8 +153,7 @@ export async function cancelBooking(bookingId) {
 export async function getAvailableRooms(checkInDate, checkOutDate, roomType) {
   try {
     const result = await api.get(
-      `rooms/available-rooms?checkInDate=${checkInDate}
-           &checkOutDate=${checkOutDate}&roomType=${roomType}`
+      `rooms/available-rooms?checkInDate=${checkInDate}&checkOutDate=${checkOutDate}&roomType=${roomType}`
     );
     return result;
   } catch (error) {
@@ -187,7 +185,7 @@ export async function loginUser(login) {
       return null;
     }
   } catch (error) {
-    console.error(error);
+    console.error(error.response.data);
     return null;
   }
 }

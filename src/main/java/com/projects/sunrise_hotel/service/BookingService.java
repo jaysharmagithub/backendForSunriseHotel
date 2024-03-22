@@ -38,7 +38,7 @@ public class BookingService implements IBookingService {
 
     @Override
     public List<BookedRoom> getAllBookingsByRoomId(Long roomId){
-        return null ;/*bookingRespository.findRoomById(roomId);*/
+        return bookingRespository.findRoomByRoomId(roomId);
   }
 
     @Override
@@ -51,7 +51,7 @@ public class BookingService implements IBookingService {
         boolean roomIsAvailable = roomIsAvailable(bookingRequest,existingBookings);
         if (roomIsAvailable){
             room.addBooking(bookingRequest);
-                                        bookingRespository.save(bookingRequest);
+            bookingRespository.save(bookingRequest);
         }else{
             throw  new InvalidBookingRequestException("Sorry, This room is not available for the selected dates;");
         }

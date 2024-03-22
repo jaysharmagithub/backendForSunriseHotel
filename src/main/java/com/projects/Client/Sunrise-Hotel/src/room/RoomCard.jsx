@@ -13,7 +13,11 @@ const RoomCard = ({ room }) => {
                 variant="top"
                 src={`data:image/png;base64,${room.photo}`}
                 alt="Room photo"
-                style={{ width: "100%", maxWidth: "200px" }}
+                style={{
+                  width: "100%",
+                  maxWidth: "200px",
+                  borderColor: "green",
+                }}
               />
             </Link>
           </div>
