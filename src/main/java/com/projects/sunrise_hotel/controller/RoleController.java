@@ -13,7 +13,7 @@ import java.util.List;
 
 import static org.springframework.http.HttpStatus.FOUND;
 
-@CrossOrigin(origins = "http://localhost:5173/")
+@CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
 @RestController
 @RequestMapping("/roles")
 @RequiredArgsConstructor

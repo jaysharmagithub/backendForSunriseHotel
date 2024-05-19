@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/bookings")
@@ -27,7 +27,7 @@ BookingController {
     private final IRoomService roomService;
 
 
-    @CrossOrigin(origins = "http://localhost:5173/")
+    @CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
     @GetMapping("/all-bookings")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<List<BookingResponse>> getAllBookings(){

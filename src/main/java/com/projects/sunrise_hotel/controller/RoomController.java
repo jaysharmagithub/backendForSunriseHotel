@@ -34,7 +34,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:5173/")
+@CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app")
 @RestController
 @RequiredArgsConstructor//injected Dependencies
 @RequestMapping("/rooms")
@@ -56,13 +56,13 @@ public class    RoomController {
         return ResponseEntity.ok(response);
     }
 
-    @CrossOrigin(origins = "http://localhost:5173/")
+    @CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
     @GetMapping("/room/types")
     public List<String> getRoomTypes() {
         return roomService.getAllRoomTypes();
     }
 
-    @CrossOrigin(origins = "http://localhost:5173/")
+    @CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
     @GetMapping("/all-rooms")
     public ResponseEntity<List<RoomResponse>> getAllRooms() throws SQLException {
         List<Room> rooms = roomService.getAllRooms();
@@ -79,7 +79,7 @@ public class    RoomController {
         return ResponseEntity.ok(roomResponses);
     }
 
-    @CrossOrigin(origins = "http://localhost:5173/")
+    @CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
     @DeleteMapping("/delete/room/{roomId}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Void> deleteRoom(@PathVariable Long roomId){
@@ -88,7 +88,7 @@ public class    RoomController {
     }
 
 
-    @CrossOrigin(origins = "http://localhost:5173/")
+    @CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
     @PutMapping("/update/{roomId}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<RoomResponse> updateRoom(@PathVariable Long roomId,
@@ -132,7 +132,7 @@ public class    RoomController {
     }
 
 
-    @CrossOrigin(origins = "http://localhost:5173/")
+    @CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
     @GetMapping("/room/{roomId}")
     public ResponseEntity<Optional<RoomResponse>> getRoomById(@PathVariable Long roomId){
         Optional<Room> theRoom = roomService.getRoomById(roomId);
@@ -143,7 +143,7 @@ public class    RoomController {
     }
 
     /* */
-    @CrossOrigin(origins = "http://localhost:5173/")
+    @CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
     @GetMapping("/available-rooms")
     public ResponseEntity<List<RoomResponse>> getAvailableRooms(
             @RequestParam("checkInDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)LocalDate checkInDate,
