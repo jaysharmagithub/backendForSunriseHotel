@@ -21,13 +21,12 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/bookings")
-public class
-BookingController {
+public class BookingController {
     private final IBookingService bookingService;
     private final IRoomService roomService;
 
 
-    @CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
+    /*@CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")*/
     @GetMapping("/all-bookings")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<List<BookingResponse>> getAllBookings(){

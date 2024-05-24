@@ -34,7 +34,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app")
+@CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
 @RestController
 @RequiredArgsConstructor//injected Dependencies
 @RequestMapping("/rooms")
@@ -56,7 +56,7 @@ public class    RoomController {
         return ResponseEntity.ok(response);
     }
 
-    @CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
+    /*@CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")*/
     @GetMapping("/room/types")
     public List<String> getRoomTypes() {
         return roomService.getAllRoomTypes();
@@ -79,7 +79,7 @@ public class    RoomController {
         return ResponseEntity.ok(roomResponses);
     }
 
-    @CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
+    /*@CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")*/
     @DeleteMapping("/delete/room/{roomId}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Void> deleteRoom(@PathVariable Long roomId){
@@ -88,7 +88,7 @@ public class    RoomController {
     }
 
 
-    @CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
+    /*@CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")*/
     @PutMapping("/update/{roomId}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<RoomResponse> updateRoom(@PathVariable Long roomId,
@@ -132,7 +132,7 @@ public class    RoomController {
     }
 
 
-    @CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
+    /*@CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")*/
     @GetMapping("/room/{roomId}")
     public ResponseEntity<Optional<RoomResponse>> getRoomById(@PathVariable Long roomId){
         Optional<Room> theRoom = roomService.getRoomById(roomId);
@@ -143,7 +143,7 @@ public class    RoomController {
     }
 
     /* */
-    @CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")
+   /* @CrossOrigin(origins = "https://sunrise-hotel-theta.vercel.app/")*/
     @GetMapping("/available-rooms")
     public ResponseEntity<List<RoomResponse>> getAvailableRooms(
             @RequestParam("checkInDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)LocalDate checkInDate,

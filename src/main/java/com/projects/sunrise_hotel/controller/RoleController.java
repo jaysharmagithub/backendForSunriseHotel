@@ -53,7 +53,7 @@ public class RoleController {
     public User removeUserFromRole(
             @RequestParam("userId") Long userId,
             @RequestParam("roleId") Long roleId){
-                return roleService.removeUserFromRole(userId, roleId);
+        return roleService.removeUserFromRole(userId, roleId);
     }
 
 
@@ -61,7 +61,7 @@ public class RoleController {
     public User assignUserToRole(
             @RequestParam("userId") Long userId,
             @RequestParam("roleId") Long roleId){
-    return roleService.assignRoleToUser(userId,roleId);
+        return roleService.assignRoleToUser(userId,roleId);
     }
 
 }
