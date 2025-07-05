@@ -32,11 +32,8 @@ and administrative functions. Built with modern backend technologies and followi
 
 ### DevOps & Infrastructure
 - **Containerization**: Docker
-- **Process Management**: PM2
-- **Environment Management**: dotenv
-- **Logging**: Winston
-- **Monitoring**: Morgan for HTTP logging
-- **Security**: Helmet.js, CORS, Rate Limiting
+- **Environment Management**: dotenv file
+- **Security**: RBAC, CORS, Rate Limiting
 
 ### External Services
 - **Payment Gateways**: Stripe, PayPal (update soon and intergeate soon)
