@@ -1,12 +1,12 @@
 # Sunrise Hotel Backend Management System
 
 
-## 🏨 Project Overview
+## Project Overview
 
 The Sunrise Hotel Backend Management System is a comprehensive, scalable RESTful API designed to handle all aspects of hotel operations including room management, reservations, customer management,
 and administrative functions. Built with modern backend technologies and following industry best practices.
 
-### 🎯 Key Features
+## Key Features
 
 - **Room Management**: Complete CRUD operations for hotel rooms, room types, and availability
 - **Reservation System**: Advanced booking  with  availability checking
@@ -14,7 +14,7 @@ and administrative functions. Built with modern backend technologies and followi
 - **Authentication & Authorization**: JWT-based secure authentication with role-based access control
 - **Admin Dashboard**: Full administrative controls for hotel operations
 
-## 🏗️ Architecture & Technology Stack
+##  Architecture & Technology Stack
 
 ### Backend Technologies
 - **Runtime**: Java 17
@@ -41,7 +41,7 @@ and administrative functions. Built with modern backend technologies and followi
 - **Cloud Storage**: AWS S3 (for images)  (update soon and intergeate soon)
 - **Maps Integration**: Google Maps API  (update soon and intergeate soon)
 
-## 📊 Database Schema
+## Database Schema
 
 
 ##  `user` Table
@@ -147,7 +147,7 @@ POST    /api/roles/remove-user-from-role/:id        # remvoe   a user roles
 POST    /api/roles/assign-user-to-role/:id          # remvoe   a user roles
 ```
 
-## 🛡️ Security Features
+##  Security Features
 
 ### Authentication & Authorization
 - JWT-based stateless authentication
@@ -156,16 +156,16 @@ POST    /api/roles/assign-user-to-role/:id          # remvoe   a user roles
 - token mechanism
 
 
-## 📋 Installation & Setup
+##  Installation & Setup
 
 
-## ⚙️ Prerequisites
+##  Prerequisites
 - Java 17+
 - Maven 3.8+
 - MySQL 8+
 - Git
 
-## 🚀 Local Development Setup
+## Local Development Setup
 
 ### 1. Clone the Repository
 ```bash
@@ -184,9 +184,9 @@ src/main/resources/
 
 Sample `application-dev.properties`:
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/test_hotel_db
-spring.datasource.username=root
-spring.datasource.password=${DB_PASSWORD:Mysql@jay}
+spring.datasource.url=jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
 spring.jpa.hibernate.ddl-auto=update
 spring.profiles.active=dev
 ```
@@ -207,7 +207,7 @@ The backend server will start on `http://localhost:8080`
 
 ---
 
-## 🐳 Docker Setup
+##  Docker Setup
 
 ### Docker Compose for MySQL
 Create a `docker-compose.yml`:
@@ -218,8 +218,8 @@ services:
     image: mysql:8
     container_name: sunrise-mysql
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-Mysql@jay}
-      MYSQL_DATABASE: test_hotel_db
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
     ports:
       - "3306:3306"
     volumes:
@@ -237,7 +237,7 @@ docker-compose up --build
 docker-compose up -d
 ---
 
-## 🔐 Secure Configuration
+##  Secure Configuration
 Use `spring.config.import` or `application-secrets.properties` (Git ignored).
 
 ```properties
@@ -252,7 +252,7 @@ spring.servlet.multipart.max-request-size=10MB
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 ### Run Unit Tests
 ```bash
@@ -266,7 +266,7 @@ mvn test -Dspring.profiles.active=test
 
 ---
 
-## 📚 API Documentation
+##  API Documentation
 
 ### Swagger (SpringDoc)
 Add in `pom.xml`:
@@ -283,7 +283,7 @@ Swagger UI:
 
 ---
 
-## 🔍 Observability
+##  Observability
 
 ### Logs
 ```properties
@@ -312,7 +312,7 @@ GET http://localhost:8080/actuator/health
 
 ---
 
-## 🧪 Database Migration
+##  Database Migration
 
 Use Flyway for schema versioning:
 ```xml
@@ -328,7 +328,7 @@ src/main/resources/db/migration/V1__init.sql
 
 ---
 
-## ✅ CI/CD and Quality
+##  CI/CD and Quality
 
 - **Code Style**: Use Checkstyle plugin
 - **Linting**: Maven Enforcer + formatting plugins
@@ -337,7 +337,7 @@ src/main/resources/db/migration/V1__init.sql
 
 ---
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Port Already in Use
 ```bash
@@ -366,7 +366,7 @@ docker-compose -f docker-compose.prod.yml up -d
 - **GCP**: Deploy on Cloud Run or Compute Engine
 - **Heroku**: Simple deployment with Git push
 
-## 🤝 Contributing
+##  Contributing
 
 ### Development Workflow
 1. Fork the repository
@@ -389,7 +389,7 @@ docker-compose -f docker-compose.prod.yml up -d
 4. Request review from maintainers
 5. Address feedback and merge
 
-## 📈 Roadmap
+##  Roadmap
 
 ### Phase 1 (Current)
 - [x] Basic CRUD operations
@@ -412,7 +412,7 @@ docker-compose -f docker-compose.prod.yml up -d
 - [ ] Advanced analytics
 - [ ] Third-party integrations
 - [ ] Microservices architecture
-## 📞 Support
+##  Support
 
 ### Getting Help
 - **Issues**: [GitHub Issues](https://github.com/jaysharmagithub/backendForSunriseHotel/issues)
@@ -427,11 +427,11 @@ Please include:
 - Error messages/logs
 - Screenshots (if applicable)
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Spring /Spring boot team for the excellent framework
 - MySQL team for the robust database
@@ -440,7 +440,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📊 Project Statistics
+##  Project Statistics
 
 - **Total Lines of Code**: 10,000+
 - **API Endpoints**: 20+
